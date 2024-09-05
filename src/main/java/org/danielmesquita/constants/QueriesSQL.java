@@ -19,6 +19,6 @@ public class QueriesSQL {
   public static final String DELETE_PRODUCT = "DELETE FROM tb_product WHERE id = ?";
   public static final String UPDATE_PRODUCT =
       "UPDATE tb_product SET name = ?, price = ?, image_uri = ?, description = ? WHERE id = ?";
-    public static final String UPDATE_ORDER =
+  public static final String UPDATE_ORDER =
       "UPDATE tb_order SET latitude = ?, longitude = ?, moment = ?, status = ? WHERE id = ?";
 }

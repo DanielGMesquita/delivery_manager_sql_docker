@@ -3,7 +3,6 @@ package org.danielmesquita;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
-
 import org.danielmesquita.constants.QueriesSQL;
 import org.danielmesquita.dbconfig.DB;
 import org.danielmesquita.dbconfig.DbException;
@@ -30,7 +29,7 @@ public class Application {
     }
 
     Product productToUpdate = new Product();
-    productToUpdate.setId(1L);  // Supondo que você quer atualizar o produto com ID 1
+    productToUpdate.setId(1L); // Supondo que você quer atualizar o produto com ID 1
     productToUpdate.setName("Samsung Galaxy S21");
     productToUpdate.setPrice(2000.0);
     productToUpdate.setDescription("The best Android phone ever");
@@ -57,9 +56,7 @@ public class Application {
 
   private static Product instantiateProduct(ResultSet resultSet) throws SQLException {
     Product product = new Product();
-    product.setId(
-        resultSet.getLong(
-            "product_id"));
+    product.setId(resultSet.getLong("product_id"));
     product.setName(resultSet.getString("name"));
     product.setPrice(resultSet.getDouble("price"));
     product.setDescription(resultSet.getString("description"));
@@ -70,7 +67,8 @@ public class Application {
   public static void insertProduct(Product product) {
     try (Connection connection = DB.getConnection();
         PreparedStatement preparedStatement =
-            connection.prepareStatement(QueriesSQL.INSERT_PRODUCTS, Statement.RETURN_GENERATED_KEYS)) {
+            connection.prepareStatement(
+                QueriesSQL.INSERT_PRODUCTS, Statement.RETURN_GENERATED_KEYS)) {
 
       preparedStatement.setString(1, product.getName());
       preparedStatement.setDouble(2, product.getPrice());
@@ -93,7 +91,8 @@ public class Application {
 
   public static void deleteProductById(long id) {
     try (Connection connection = DB.getConnection();
-        PreparedStatement preparedStatement = connection.prepareStatement(QueriesSQL.DELETE_PRODUCT)) {
+        PreparedStatement preparedStatement =
+            connection.prepareStatement(QueriesSQL.DELETE_PRODUCT)) {
 
       preparedStatement.setLong(1, id);
 
@@ -105,7 +104,8 @@ public class Application {
 
   public static void updateProduct(Product product) {
     try (Connection connection = DB.getConnection();
-        PreparedStatement preparedStatement = connection.prepareStatement(QueriesSQL.UPDATE_PRODUCT)) {
+        PreparedStatement preparedStatement =
+            connection.prepareStatement(QueriesSQL.UPDATE_PRODUCT)) {
 
       preparedStatement.setString(1, product.getName());
       preparedStatement.setDouble(2, product.getPrice());
