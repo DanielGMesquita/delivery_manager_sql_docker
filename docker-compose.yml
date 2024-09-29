@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:
+  postgres_application:
+    container_name: postgres_application
+    image: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: orderdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5432:5432"
+
+  delivery_management_api:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres_application
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres_application:5432/orderdb
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=admin
+
+volumes:
+  postgres_data:
+
+networks:
+  app-network:
