@@ -5,23 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86ab539d-53e2-4a34-ae58-fbe29588592c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/danielmesquita/entities/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/danielmesquita/configuration/ConfigurationCors.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/danielmesquita/controller/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/danielmesquita/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/danielmesquita/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/danielmesquita/dto/CategoryDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/danielmesquita/dto/OrderDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/danielmesquita/dto/ProductDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/danielmesquita/repository/CategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/danielmesquita/repository/OrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/danielmesquita/repository/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/danielmesquita/service/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/danielmesquita/service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/danielmesquita/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/danielmesquita/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/danielmesquita/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/danielmesquita/constants/QueriesSQL.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/danielmesquita/dbconfig/DB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/danielmesquita/dbconfig/DbException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/danielmesquita/entities/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/danielmesquita/entities/Category.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/danielmesquita/entities/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/danielmesquita/entities/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/danielmesquita/entities/OrderStatus.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/danielmesquita/entities/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/danielmesquita/entities/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +32,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -53,7 +55,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/daniel/Documents/Projects/delivery-manager",
+    "last_opened_file_path": "/home/daniel/Documents/Projects/delivery-manager/src/main/java/org/danielmesquita",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -61,7 +63,13 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/org/danielmesquita" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.danielmesquita.dto" />
+      <recent name="org.danielmesquita.controller" />
+      <recent name="org.danielmesquita.service" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
