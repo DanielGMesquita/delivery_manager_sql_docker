@@ -3,7 +3,6 @@ package org.danielmesquita.controller;
 import java.util.List;
 import java.util.Optional;
 import org.danielmesquita.dto.ProductDTO;
-import org.danielmesquita.entities.Category;
 import org.danielmesquita.entities.Product;
 import org.danielmesquita.service.CategoryService;
 import org.danielmesquita.service.ProductService;
@@ -11,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/products")
@@ -22,22 +20,9 @@ public class ProductController {
 
   @PostMapping
   public ResponseEntity<Product> createProduct(@RequestBody ProductDTO productDTO) {
-    Category category =
-        categoryService
-            .findCategoryByName(productDTO.getCategory())
-            .orElseThrow(
-                () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Category not found"));
+    Product newProduct = productService.insertProduct(productDTO);
 
-    Product product =
-        Product.builder()
-            .name(productDTO.getName())
-            .price(productDTO.getPrice())
-            .category(category)
-            .build();
-
-    productService.insertProduct(product);
-
-    return new ResponseEntity<>(product, HttpStatus.CREATED);
+    return new ResponseEntity<>(newProduct, HttpStatus.CREATED);
   }
 
   @GetMapping
